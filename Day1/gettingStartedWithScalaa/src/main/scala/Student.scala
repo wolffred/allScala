@@ -1,0 +1,1 @@
+class Student (first: String, last:String)
