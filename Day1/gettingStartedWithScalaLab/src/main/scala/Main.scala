@@ -14,6 +14,8 @@ object Main {
 
     println(getPassword("root:\u200Bx:0:0:root:/root:/bin/bash"))
 
+    println(parseUnixPassword("root:\u200Bx:0:0:root:/root:/bin/bash"))
+
     }
 
   def times2(i: Int):Int = {
@@ -24,6 +26,9 @@ object Main {
     val newTemp:Double =  ((temp * 9 / 5) + 32)
     newTemp
   }
+
+  //OR
+  //def celsiusToFahrenheit(celsius: Double): Double = (celsius * 9 / 5) +  32
 
   def getDate(newdate: String): String = {
     val formatter = DateTimeFormatter.ofPattern("dd/MM/yy")
@@ -50,6 +55,13 @@ object Main {
     )
 
   }
+
+  def parseUnixPassword(pwd: String): Unit = {
+    val passwdMatcher = raw"(.*):(.*):([0-9]*):([0-9]*):(.*):(.*):(.*)".r
+    val passwdMatcher(username, password, userid, groupId, description, homeDirectory, shell) = pwd
+    // print out the values if you want
+  }
+
 
 }
 

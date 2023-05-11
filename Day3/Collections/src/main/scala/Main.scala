@@ -51,7 +51,7 @@ object Main {
 
     //SEQUENCE
 
-    val s  = Seq(1,2,3,4,5)
+    var s  = Seq(1,2,3,4,5)
 
     println(s.length)
     println(s.indices)
@@ -65,6 +65,9 @@ object Main {
 
     println(List("Steve", "John").sortWith(_.compareTo(_) < 0))
     println(List("Steve", "John").sortWith(_.compareTo(_) < 0).reverse)
+
+//    s = s :+6
+//    println("new s" + s)
 
 
     //LINEAR SEQUENCE
